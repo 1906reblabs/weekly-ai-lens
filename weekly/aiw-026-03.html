@@ -3,107 +3,891 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AIW-026-03 — Coming Soon | The Daily African Lens</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>AI Weekly Intelligence — Edition #AIW-026-03 | 24 March 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #0e0e0e; --cream: #faf7f2; --gold: #c8922a;
-    --rust: #b84c2a; --teal: #1a6b5e; --border: #d8d0c4;
-    --mid-grey: #7a7570; --light-grey: #ede9e3; --deep-blue: #0a1628;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: var(--cream); color: var(--ink); font-family: 'DM Sans', sans-serif; }
-  a { color: var(--teal); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  nav { background: var(--deep-blue); padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-  .nav-brand { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 18px; color: #fff; }
-  .nav-brand span { color: var(--gold); }
-  .nav-links { display: flex; gap: 24px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
-  .nav-links a { color: #8a99b8; }
-  .hero { background: var(--ink); padding: 60px 32px 48px; text-align: center; }
-  .hero .over { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
-  .hero .badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.12em; background: var(--gold); color: var(--deep-blue); padding: 5px 14px; font-weight: 600; margin-bottom: 20px; }
-  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(24px, 5vw, 40px); font-weight: 900; color: #fff; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 14px; max-width: 640px; margin-left: auto; margin-right: auto; }
-  .hero .window { font-family: 'DM Mono', monospace; font-size: 11px; color: #7a8294; letter-spacing: 0.08em; }
-  .main { max-width: 680px; margin: 0 auto; padding: 48px 24px 64px; }
-  .status-box { background: var(--deep-blue); color: #e0dbd4; padding: 28px 32px; margin-bottom: 28px; text-align: center; }
-  .status-box .sb-icon { font-size: 36px; margin-bottom: 14px; }
-  .status-box h2 { font-family: 'Playfair Display', serif; font-size: 20px; color: #fff; margin-bottom: 10px; }
-  .status-box p { font-size: 13.5px; color: #8a99b8; line-height: 1.65; }
-  .preview-box { background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--gold); padding: 24px 26px; margin-bottom: 20px; }
-  .preview-box h3 { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
-  .preview-box p { font-size: 13.5px; color: #3a3530; line-height: 1.7; margin-bottom: 14px; }
-  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .tag { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; background: var(--light-grey); color: var(--mid-grey); }
-  .nav-btns { display: flex; gap: 12px; flex-wrap: wrap; }
-  .btn { display: inline-block; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 10px 20px; }
-  .btn-primary { background: var(--teal); color: #fff; }
-  .btn-primary:hover { background: var(--ink); text-decoration: none; }
-  .btn-secondary { background: #fff; color: var(--teal); border: 1px solid var(--teal); }
-  .btn-secondary:hover { background: var(--teal-light, #e3f2ee); text-decoration: none; }
-  footer { background: var(--ink); color: #7a8294; text-align: center; padding: 28px 24px; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.06em; }
-  footer strong { color: #c8d4e8; }
+:root {
+  --ink: #0e0e0e;
+  --cream: #faf7f2;
+  --gold: #c8922a;
+  --gold-light: #f0d898;
+  --rust: #b84c2a;
+  --teal: #1a6b5e;
+  --teal-light: #e3f2ee;
+  --border: #d8d0c4;
+  --mid-grey: #7a7570;
+  --light-grey: #ede9e3;
+  --deep: #061a12;
+  --sovereign: #0f4a34;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+}
+a { color: var(--teal); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrapper { max-width: 760px; margin: 0 auto; padding: 0 22px 80px; }
+
+/* ── TOP BAR ── */
+.topbar {
+  background: var(--deep);
+  padding: 10px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.topbar-brand { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 900; color: #fff; letter-spacing: -0.01em; }
+.topbar-brand span { color: var(--gold); }
+.topbar-meta { font-family: 'DM Mono', monospace; font-size: 10px; color: #5a8070; letter-spacing: 0.08em; text-transform: uppercase; }
+.topbar-badge { background: var(--teal); color: #fff; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 9px; font-weight: 500; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--deep);
+  background-image: linear-gradient(135deg, #061a12 0%, #0a2818 40%, #061a24 100%);
+  padding: 52px 22px 44px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -80px;
+  width: 280px; height: 280px;
+  border: 1px solid rgba(26,107,94,0.3);
+  border-radius: 50%;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px; left: -60px;
+  width: 200px; height: 200px;
+  border: 1px solid rgba(26,107,94,0.15);
+  border-radius: 50%;
+}
+.hero-inner { position: relative; z-index: 1; }
+.hero .over { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; opacity: 0.9; }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(28px, 5.5vw, 52px); font-weight: 900; color: #fff; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 16px; }
+.hero h1 em { font-style: italic; color: #7ad4be; }
+.hero .sub { font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #3a6858; margin-bottom: 32px; }
+.hero-window {
+  display: inline-block;
+  background: rgba(26,107,94,0.15);
+  border: 1px solid rgba(26,107,94,0.35);
+  padding: 8px 18px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: #7ad4be;
+  letter-spacing: 0.06em;
+}
+.hero-stats { display: flex; justify-content: center; gap: 36px; flex-wrap: wrap; margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.05); }
+.hs { text-align: center; }
+.hs-val { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: #7ad4be; display: block; }
+.hs-val.gold { color: var(--gold); }
+.hs-lbl { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: #3a6858; margin-top: 2px; display: block; }
+
+/* ── SOVEREIGN BANNER ── */
+.sovereign-banner {
+  background: var(--sovereign);
+  color: #7ad4be;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  flex-wrap: wrap;
+}
+.sovereign-banner strong { color: #fff; }
+
+/* ── EXEC BOX ── */
+.exec-box { background: var(--deep); color: var(--cream); padding: 32px 28px; margin: 36px 0; border-left: 4px solid var(--teal); }
+.exec-box .ex-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--teal); margin-bottom: 18px; }
+.exec-box .ex-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: #fff; margin-bottom: 20px; line-height: 1.3; }
+.exec-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.exec-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 13.5px; line-height: 1.6; color: #a8c8bc; }
+.exec-list li::before { content: '→'; color: var(--teal); font-family: 'DM Mono', monospace; font-size: 12px; flex-shrink: 0; margin-top: 2px; }
+.exec-list li.flagship::before { content: '★'; color: #7ad4be; }
+
+/* ── SECTION HEADERS ── */
+.sec { border-top: 3px solid var(--ink); margin: 44px 0 24px; padding-top: 16px; display: flex; align-items: baseline; gap: 12px; }
+.sec-num { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--teal); letter-spacing: 0.1em; flex-shrink: 0; }
+.sec h2 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; letter-spacing: -0.01em; color: var(--ink); }
+
+/* ── STORY CARDS ── */
+.story { background: #fff; border: 1px solid var(--border); padding: 22px 22px 18px; margin-bottom: 14px; position: relative; }
+.story-rank { position: absolute; top: -1px; left: -1px; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 10px; background: var(--gold); color: var(--ink); }
+.story-rank.flagship { background: var(--sovereign); color: #7ad4be; }
+.story-rank.critical  { background: var(--rust); color: #fff; }
+.story-rank.watch     { background: var(--teal); color: #fff; }
+.story-rank.pivot     { background: #2a1055; color: #c4b8f0; }
+.story-rank.geo       { background: #082050; color: #90caf9; }
+.story h3 { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; line-height: 1.4; margin: 22px 0 10px; color: var(--ink); }
+.pills { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
+.pill { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 8px; border-radius: 2px; }
+.pl-p { background: var(--teal-light); color: var(--teal); }
+.pl-s { background: #fbe9e6; color: var(--rust); }
+.pl-t { background: #fef3e2; color: #9a6210; }
+.pl-i { background: #e8f5f0; color: var(--sovereign); }
+.pl-g { background: #e3f2fd; color: #1565c0; }
+.pl-e { background: #e9f5e9; color: #2e7d32; }
+.pl-k { background: var(--ink); color: var(--cream); }
+.story p { font-size: 13.5px; line-height: 1.72; color: #2a2520; margin-bottom: 10px; }
+.insight-box { background: #f0f9f6; border-left: 3px solid var(--teal); padding: 10px 14px; margin-top: 12px; }
+.insight-box .ib-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 5px; }
+.insight-box p { font-size: 13px; color: #1a3a30; margin: 0; }
+.story .meta-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding-top: 12px; border-top: 1px dashed var(--border); margin-top: 12px; }
+.story .source { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--mid-grey); flex: 1; }
+
+/* ── DATA PANELS ── */
+.data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+.data-card { background: #fff; border: 1px solid var(--border); padding: 16px 18px; }
+.dc-val { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--ink); display: block; }
+.dc-val.gold { color: var(--gold); }
+.dc-val.rust { color: var(--rust); }
+.dc-val.teal { color: var(--teal); }
+.dc-lbl { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.08em; color: var(--mid-grey); margin-top: 4px; text-transform: uppercase; display: block; }
+
+/* ── STRATEGIC INSIGHTS ── */
+.insight-card { background: var(--sovereign); color: #fff; padding: 20px 22px; margin-bottom: 12px; }
+.ic-head { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(122,212,190,0.6); margin-bottom: 8px; }
+.ic-title { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 8px; line-height: 1.3; }
+.ic-body { font-size: 13px; color: rgba(200,230,220,0.85); line-height: 1.65; }
+
+/* ── OPPORTUNITIES ── */
+.opp-row { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-bottom: 1px dashed var(--border); }
+.opp-row:last-child { border-bottom: none; }
+.opp-num { width: 28px; height: 28px; background: var(--teal); color: #fff; font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.opp-title { font-weight: 600; font-size: 13.5px; margin-bottom: 3px; }
+.opp-desc { font-size: 12.5px; color: var(--mid-grey); line-height: 1.6; }
+
+/* ── RISKS ── */
+.risk-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; background: #fff5f3; border-left: 3px solid var(--rust); margin-bottom: 10px; font-size: 13.5px; }
+.risk-icon { color: var(--rust); font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; flex-shrink: 0; margin-top: 1px; }
+
+/* ── EVENTS TABLE ── */
+.events-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+.events-table th { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid-grey); background: var(--light-grey); padding: 8px 12px; text-align: left; border-bottom: 2px solid var(--border); }
+.events-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 13px; background: #fff; vertical-align: top; }
+.events-table tr:last-child td { border-bottom: none; }
+.ev-date { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--rust); white-space: nowrap; }
+.ev-tag { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; padding: 1px 6px; background: var(--teal-light); color: var(--teal); border-radius: 2px; margin-top: 2px; }
+.ev-tag.live { background: #fbe9e6; color: var(--rust); }
+.ev-tag.done { background: var(--light-grey); color: var(--mid-grey); }
+
+/* ── AGENT LOG ── */
+.agent-log { background: #040e08; border: 1px solid #0a2018; padding: 16px 18px; margin: 20px 0; font-family: 'DM Mono', monospace; font-size: 11px; color: #3a7060; letter-spacing: 0.04em; line-height: 1.8; }
+.agent-log .al-head { color: var(--teal); letter-spacing: 0.12em; text-transform: uppercase; font-size: 9px; margin-bottom: 10px; }
+.al-step { margin-bottom: 4px; }
+.al-step .ag { color: #2a9070; }
+.al-step .st { color: #4a7060; }
+.al-step .ok { color: #3aaa70; }
+.al-step .warn { color: var(--rust); }
+
+/* ── EDITOR NOTE ── */
+.ed-note { background: var(--deep); color: var(--cream); padding: 28px 26px; margin-top: 44px; border-left: 4px solid var(--teal); }
+.en-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; }
+.ed-note p { font-size: 13.5px; line-height: 1.75; color: #a0c8b8; }
+
+/* ── SKILLS UPDATE ── */
+.skills-box { background: #040e08; border: 1px solid #0a2018; padding: 16px 18px; margin: 12px 0; }
+
+/* ── TOC ── */
+.toc { background: var(--light-grey); border: 1px solid var(--border); padding: 18px 20px; margin: 28px 0; }
+.toc-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid-grey); margin-bottom: 12px; }
+.toc-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 4px 20px; }
+.toc-list li { font-size: 12.5px; }
+.toc-list a { color: var(--teal); }
+
+/* ── FOOTER ── */
+.footer { border-top: 3px solid var(--ink); padding: 24px 0; margin-top: 40px; text-align: center; }
+.footer .logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 900; letter-spacing: -0.01em; margin-bottom: 8px; }
+.footer p { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--mid-grey); letter-spacing: 0.06em; margin-bottom: 4px; }
+.footer a { color: var(--teal); }
+
+.note-box { background: #f0f9f6; border: 1px solid #b8dcd2; border-left: 4px solid var(--teal); padding: 12px 16px; font-size: 12.5px; color: #1a3a30; margin: 16px 0; }
+
+@media (max-width: 540px) {
+  .hero-stats { gap: 20px; }
+  .data-grid { grid-template-columns: 1fr; }
+  .toc-list { grid-template-columns: 1fr; }
+  .topbar { position: static; }
+}
 </style>
 </head>
 <body>
-<nav>
-  <a href="../index.html" style="text-decoration:none;"><div class="nav-brand">The Daily African Lens<span>.</span></div></a>
-  <div class="nav-links">
-    <a href="../index.html">Archive</a>
-    <a href="index.html">AI Weekly</a>
-    <a href="../editions/index.html">Daily</a>
-    <a href="https://simphiwemlotshwa.substack.com/" target="_blank">Subscribe</a>
-  </div>
-</nav>
 
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-brand">The Daily African Lens<span>.</span></div>
+  <div class="topbar-meta">AI Weekly Intelligence</div>
+  <div class="topbar-badge">AIW-026-03</div>
+</div>
+
+<!-- HERO -->
 <div class="hero">
-  <div class="over">AI Weekly Intelligence</div>
-  <div class="badge">AIW-026-03</div>
-  <h1>Sovereignty Week: Cassava AI Factory, NVIDIA GTC Vera Rubin, Korea-Africa</h1>
-  <div class="window">Window: 17 Mar → 24 Mar 2026</div>
-</div>
-
-<div class="main">
-
-  <div class="status-box">
-    <div class="sb-icon">📋</div>
-    <h2>Report In Preparation</h2>
-    <p>This edition of the AI Weekly Intelligence is being compiled using the Agentic Workflow v1.0. The full 7-section report covering this window will be published soon. The daily edition archive below covers every story from this window in full.</p>
-  </div>
-
-  <div class="preview-box">
-    <h3>What This Report Will Cover</h3>
-    <p>Cassava Technologies deploys Africa's first NVIDIA-powered sovereign AI Factory in South Africa. Jensen Huang unveils the Vera Rubin GPU at GTC 2026 — $1T in orders. MTN lines up data-centre partners. Mark Nasila's Sovereign AI thesis from CNBC Africa.</p>
-    <div class="tags">
-      <span class="tag">Infrastructure</span>
-      <span class="tag">Tech</span>
-      <span class="tag">Geopolitics</span>
-      <span class="tag">Research</span>
+  <div class="hero-inner">
+    <div class="over">AI Weekly Intelligence — Edition #AIW-026-03</div>
+    <h1>The <em>Sovereignty</em><br>Inflection</h1>
+    <div class="sub">Compute · Governance · Identity — Africa Claims Its AI Foundation</div>
+    <div class="hero-window">
+      Window: Tuesday 17 March 2026, 06:00 SAST → Tuesday 24 March 2026, 05:59 SAST
+    </div>
+    <div class="hero-stats">
+      <div class="hs"><span class="hs-val">11</span><span class="hs-lbl">Key Developments</span></div>
+      <div class="hs"><span class="hs-val gold">R7.5B+</span><span class="hs-lbl">Infrastructure Committed</span></div>
+      <div class="hs"><span class="hs-val">160 MW</span><span class="hs-lbl">SA Compute Arriving</span></div>
+      <div class="hs"><span class="hs-val">$2.1B</span><span class="hs-lbl">Surveillance Exposure</span></div>
     </div>
   </div>
-
-  <div style="margin-bottom:24px;">
-    <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--mid-grey);margin-bottom:14px;border-bottom:1px solid var(--border);padding-bottom:8px;">While You Wait — Read the Daily Editions</div>
-    <p style="font-size:13.5px;color:#3a3530;line-height:1.65;margin-bottom:16px;">Every story from this window is available in the daily edition archive, ranked by impact and with full three-sentence summaries, source links, and context.</p>
-    <div class="nav-btns">
-      <a href="../editions/index.html" class="btn btn-primary">Browse Daily Editions →</a>
-      <a href="index.html" class="btn btn-secondary">← All Weekly Reports</a>
-    </div>
-  </div>
-
-  <div style="background:#fff;border:1px solid var(--border);padding:20px 22px;">
-    <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid-grey);margin-bottom:10px;">Subscribe to Be Notified</div>
-    <p style="font-size:13px;color:#3a3530;margin-bottom:12px;">The Daily African Lens publishes at 6:00 AM SAST. Subscribe on Substack to receive every edition the moment it lands.</p>
-    <a href="https://simphiwemlotshwa.substack.com/" target="_blank" class="btn btn-primary">Subscribe Free on Substack →</a>
-  </div>
-
 </div>
 
-<footer>
-  <p><strong>The Daily African Lens</strong> · AI Weekly Intelligence · Edition AIW-026-03</p>
-  <p style="margin-top:8px;">Agentic Workflow v1.0 · Coverage: 17 Mar → 24 Mar 2026</p>
-  <p style="margin-top:6px;"><a href="https://simphiwemlotshwa.substack.com/" style="color:#8a99b8;">simphiwemlotshwa.substack.com</a></p>
-</footer>
+<!-- SOVEREIGN BANNER -->
+<div class="sovereign-banner">
+  <span>★</span>
+  <span><strong>SOVEREIGNTY WEEK:</strong> Cassava AI Factory deploys · NVIDIA GTC reshapes compute pipeline · Kenya AI Bill advances · $2B surveillance gap exposed · Africa redefines its AI posture</span>
+</div>
 
+<div class="wrapper">
+
+<!-- AGENT LOG -->
+<div class="agent-log">
+  <div class="al-head">§ Agentic Workflow Execution Log — AIW-026-03</div>
+  <div class="al-step"><span class="ag">[AGENT 1 · DATA SCOUT]</span> <span class="st">→ Collected 54 raw signals from DAL editions 075–080 (window 17–24 Mar 2026)</span> <span class="ok">✓ COMPLETE</span></div>
+  <div class="al-step"><span class="ag">[AGENT 2 · SIGNAL FILTER]</span> <span class="st">→ Filtered to 11 high-signal items. Applied sovereignty lens as primary analytical filter. Removed 43 noise items.</span> <span class="ok">✓ COMPLETE</span></div>
+  <div class="al-step"><span class="ag">[AGENT 3 · SYNTHESIS]</span> <span class="st">→ Identified "Sovereignty Inflection" as week's dominant theme across compute, governance, and identity dimensions</span> <span class="ok">✓ COMPLETE</span></div>
+  <div class="al-step"><span class="ag">[AGENT 4 · CRITIC]</span> <span class="st">→ Gaps identified: NVIDIA GTC Africa linkage under-developed; surveillance-governance convergence not sufficiently connected to legislative timeline; Google Accelerator closing under-weighted as ecosystem signal</span> <span class="warn">⚠ GAPS FOUND</span></div>
+  <div class="al-step"><span class="ag">[AGENT 5 · GAP ANALYSIS]</span> <span class="st">→ Root cause: NVIDIA GTC treated as global story; must always contextualise hardware announcements against African compute pipeline (Cassava, MTN, Servernah)</span> <span class="ok">✓ DIAGNOSED</span></div>
+  <div class="al-step"><span class="ag">[AGENT 6 · SKILLS EVOLUTION]</span> <span class="st">→ Added rule: Global hardware/GPU announcements must be cross-referenced with African NVIDIA partners (Cassava) within 48hrs. Added: Accelerator closing deadlines = ecosystem health signal, not routine calendar item.</span> <span class="ok">✓ UPDATED</span></div>
+  <div class="al-step"><span class="ag">[AGENT 7 · MEMORY]</span> <span class="st">→ Stored: "Sovereignty" as the dominant Q1 2026 meta-theme spanning compute (Cassava), language (NITDA/NKENNEAi), governance (SA policy, Kenya bill), and capital (indigenous VC structures). Pattern: each sovereignty layer is advancing independently; integration is the missing link.</span> <span class="ok">✓ STORED</span></div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-label">§ In This Edition</div>
+  <ul class="toc-list">
+    <li><a href="#exec">Executive Summary</a></li>
+    <li><a href="#developments">Key Developments (11)</a></li>
+    <li><a href="#market">Market &amp; Business Signals</a></li>
+    <li><a href="#research">Research &amp; Institutional</a></li>
+    <li><a href="#strategic">Strategic Insights (5)</a></li>
+    <li><a href="#opportunities">Opportunities (6)</a></li>
+    <li><a href="#risks">Risks &amp; Threats</a></li>
+    <li><a href="#events">Events Calendar</a></li>
+    <li><a href="#skills">Skills File Update</a></li>
+    <li><a href="#memory">Memory Log</a></li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 1: EXECUTIVE SUMMARY
+══════════════════════════════════ -->
+<div class="exec-box" id="exec">
+  <div class="ex-label">§ 01 — Executive Summary (Agents 1+2+3)</div>
+  <div class="ex-title">What actually mattered 17–24 March 2026 — 11 signals, no noise</div>
+  <ul class="exec-list">
+    <li class="flagship">Cassava Technologies deployed Africa's first NVIDIA-powered sovereign AI Factory in South Africa on 18 March — with confirmed expansion to Nigeria, Kenya, Egypt, and Morocco. This is the single most consequential AI infrastructure event on the continent in 2026: physical, local GPU compute is now operational at enterprise scale within African borders for the first time.</li>
+    <li>NVIDIA's Jensen Huang unveiled the Vera Rubin GPU at GTC 2026 — $1 trillion in projected orders, 50 petaflops per chip. Because Cassava is Africa's only NVIDIA Cloud Partner, Vera Rubin's compute trajectory will directly determine the ceiling of Africa's sovereign AI capacity over the next two years. Global hardware and African infrastructure are now the same story.</li>
+    <li>MTN Group announced it has shortlisted US and European co-investment partners for AI-enabled data centres in South Africa and Nigeria, with a Capital Markets Day in June 2026 to reveal names and capital structure. West Africa is about to gain its first hyperscale AI compute facility — ending the current reality where Nigerian enterprises must route heavy workloads through Cape Town or Johannesburg.</li>
+    <li>Kenya's Senate AI Bill 2026 — proposing an AI Commissioner, criminal liability for non-consensual deepfakes, and mandatory explainability rights — advanced in Senate committee deliberations simultaneously with the EU–Kenya Digital Dialogue formalising €430 million in AI partnerships. Kenya has positioned itself as Africa's dual-track AI governance leader: domestic legislation AND international diplomacy, simultaneously.</li>
+    <li class="flagship">The Institute of Development Studies and Rest of World published a landmark report revealing $2.1 billion in Chinese-built AI surveillance infrastructure across 11 African countries — without a single adequate rights framework. This is not a future risk. It is the current operating environment. Nigeria is simultaneously the continent's largest surveillance spender ($470M) and closest to enacting the AI law that would retrospectively govern it.</li>
+    <li>The World Bank WDR 2026 regional consultation concluded in Pretoria (18–21 March) at the University of Pretoria — gathering evidence from Africa's AI economy to inform the year's most influential global development economics report. Africa's lived experience of AI is being written into the blueprint that shapes donor priorities and government strategies globally.</li>
+    <li>Google for Startups Accelerator Africa Class 10 closed applications on 18 March — the first explicitly "AI-First" cohort in the programme's decade of operation. 180+ alumni companies, $350M raised, 3,700+ jobs: the closing of this window is a canary for the pipeline of AI-native African founders entering 2026's late-stage ecosystem.</li>
+    <li>South Africa's Draft AI Policy remained un-gazetted through the week — a rolling delay that is now the most prominent governance gap in Africa's second-largest economy. The 60-day public comment window has not started. Every enterprise deploying AI in South African financial services, healthcare, or public sector is operating without a regulatory reference document.</li>
+    <li>TechCabal's Future of Privacy Forum analysis confirmed that Africa's "backdoor" AI regulation — defaulting to data protection laws in the absence of dedicated AI frameworks — is showing structural limits as AI moves from data processing into agentic decision-making, credit scoring, and automated surveillance systems.</li>
+    <li>BAFAI (Nigeria's foremost AI education institution) expanded its curriculum on 18 March, adding Agentic AI, AI Ethics, AI Research, and Workflow Automation — and connected its graduate pipeline to employer placement. The gap between infrastructure sovereignty (Cassava) and talent sovereignty (BAFAI) is the continent's most urgent integration challenge.</li>
+    <li>The Rwanda FinTech Centre officially launched (18 March) as a permanent continental hub for AI-powered financial inclusion — combining the country's regulatory credibility (3rd in Africa, 67th globally in GFCI 2025) with institutional fintech infrastructure. Kigali is cementing its position as East Africa's AI-finance capital, consolidating the momentum from IFF 2026 the previous week.</li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 2: KEY DEVELOPMENTS
+══════════════════════════════════ -->
+<div class="sec" id="developments">
+  <div class="sec-num">§ 02</div>
+  <h2>Key Developments</h2>
+</div>
+
+<!-- DEV 1: CASSAVA AI FACTORY -->
+<div class="story">
+  <div class="rank-badge flagship">RANK #1 — SOVEREIGNTY MILESTONE</div>
+  <h3>Cassava Technologies Deploys Africa's First Sovereign AI Factory in South Africa — GPU-as-a-Service Now Operational Within African Borders</h3>
+  <div class="pills">
+    <span class="pill pl-i">Infrastructure</span>
+    <span class="pill pl-k">South Africa</span>
+    <span class="pill pl-k">Continental</span>
+    <span class="pill pl-e">Ecosystem</span>
+  </div>
+  <p>Cassava Technologies — Africa's first and only NVIDIA Cloud Partner — deployed its AI Factory in South Africa on 18 March 2026, announced from NVIDIA GTC in San Jose. The AI Factory delivers GPU-as-a-Service and AI-as-a-Service through the CAIMEx multi-model exchange platform, enabling African enterprises, governments, and developers to build, fine-tune, and deploy AI without routing sensitive data or workloads offshore. Confirmed expansion roadmap: Nigeria, Kenya, Egypt, and Morocco. Partnerships at launch include the CSIR's National Integrated Cyberinfrastructure System and Zindi — Africa's pan-continental data science platform with 70,000+ developers, who can now access local GPU resources for the first time.</p>
+  <p>Group COO Ahmed El Beheiry's framing was explicit: "For Cassava, building Africa's AI ecosystem is an act of empowerment, not just a technological milestone. As the continent's first NVIDIA Cloud Partner, we are ensuring that African businesses aren't just consumers of global tech — they are the architects of it." This is the clearest operational realisation of sovereign AI on the continent to date.</p>
+  <div class="insight-box">
+    <div class="ib-label">Why this changes everything</div>
+    <p>Every national AI strategy on the continent has identified compute access as the structural bottleneck — and every strategy has been undermined by the absence of exactly this layer. Cassava's AI Factory does not merely provide compute: it provides local, compliant, sovereign compute that government agencies and regulated enterprises (banks, hospitals, telcos) can use without the data residency barriers that have blocked public-sector AI adoption across the continent. When the Cassava AI Factory expands to Nigeria and Kenya, it will remove the most frequently cited barrier to enterprise AI adoption in those markets in a single product move.</p>
+  </div>
+  <div class="meta-row">
+    <span class="source">iAfrica.com · TechAfrica News · BusinessDay NG · APO Group — 18 March 2026</span>
+  </div>
+</div>
+
+<!-- DEV 2: NVIDIA GTC 2026 -->
+<div class="story">
+  <div class="rank-badge">RANK #2 — INFRASTRUCTURE PIPELINE</div>
+  <h3>NVIDIA GTC 2026: Vera Rubin GPU, $1 Trillion in Orders — The Hardware Trajectory That Will Define Africa's AI Compute Ceiling</h3>
+  <div class="pills">
+    <span class="pill pl-i">Infrastructure</span>
+    <span class="pill pl-k">Continental</span>
+    <span class="pill pl-e">Market Data</span>
+    <span class="pill pl-t">Tech</span>
+  </div>
+  <p>At NVIDIA's GTC 2026 in San Jose on 16 March, CEO Jensen Huang unveiled the Vera Rubin GPU platform — 336 billion transistors, HBM4 memory at 22.2 TB/s bandwidth, 50 petaflops of FP4 inference per chip — alongside the NemoClaw open-source agentic AI platform and combined Blackwell/Vera Rubin purchase orders of a projected $1 trillion through 2027. Huang's framing: "Every nation will build it. From energy and chips to infrastructure, models and applications, every layer of the stack is advancing at once."</p>
+  <p>The Africa implication is direct: Cassava's AI Factory runs on NVIDIA GPU architecture and is backed by NVIDIA's $700 million infrastructure investment. The Vera Rubin generation will define what AI compute capacity flows to the continent over the next two years. Every African government strategy referencing "sovereign AI compute" is, in operational practice, a downstream function of NVIDIA's product roadmap.</p>
+  <div class="insight-box">
+    <div class="ib-label">The compute dependency African strategists must price in</div>
+    <p>Africa's "sovereignty" narrative is genuine — but it operates within a hardware dependency that no continent-level policy can eliminate in the near term. Vera Rubin chips will be allocated according to NVIDIA's global priority queue; Cassava's privileged NVIDIA Cloud Partner status is the mechanism by which Africa accesses that queue. The most important AI infrastructure relationship for Africa in 2026 is not between any African government and its tech ministry — it is between Cassava Technologies and NVIDIA.</p>
+  </div>
+  <div class="meta-row">
+    <span class="source">NVIDIA Newsroom · CNBC · Tom's Hardware · TechCentral — 16–17 March 2026</span>
+  </div>
+</div>
+
+<!-- DEV 3: MTN DATA CENTRES -->
+<div class="story">
+  <div class="rank-badge watch">RANK #3 — INFRASTRUCTURE: WEST AFRICA</div>
+  <h3>MTN Lines Up Partners for AI Data Centres in South Africa and Nigeria — West Africa's First Hyperscale AI Compute Facility Is Being Structured</h3>
+  <div class="pills">
+    <span class="pill pl-i">Infrastructure</span>
+    <span class="pill pl-k">South Africa</span>
+    <span class="pill pl-k">Nigeria</span>
+    <span class="pill pl-k">Continental</span>
+  </div>
+  <p>MTN Group announced on 16 March that it has shortlisted undisclosed US and European strategic partners and is negotiating co-investment structures for AI-enabled data centres in South Africa and Nigeria — the two priority markets confirmed after comprehensive feasibility assessments under Ambition 2030. Capital allocation details and partner names will be released at a Capital Markets Day in June 2026.</p>
+  <div class="insight-box">
+    <div class="ib-label">The significance of Nigeria's compute gap closing</div>
+    <p>If MTN delivers, Nigeria — Africa's most populous nation and largest AI talent market — gains its first hyperscale AI compute facility. Currently, Nigerian enterprises must host heavy AI workloads on AWS Cape Town or Azure Johannesburg, adding latency, data residency risk, and foreign-currency cost to every inference call. MTN's telco distribution infrastructure (300 million subscribers, active across 54 countries) means a Nigerian AI data centre would not merely serve enterprise clients — it would anchor a national AI compute network through the backbone Africa already uses.</p>
+  </div>
+  <div class="meta-row">
+    <span class="source">TechCentral · iAfrica.com — 16 March 2026</span>
+  </div>
+</div>
+
+<!-- DEV 4: KENYA AI BILL + EU DIALOGUE -->
+<div class="story">
+  <div class="rank-badge">RANK #4 — GOVERNANCE + DIPLOMACY</div>
+  <h3>Kenya's AI Bill Advances in Senate + EU–Kenya Digital Dialogue (€430M) Formalised — Africa's Most Ambitious Dual-Track AI Governance Play</h3>
+  <div class="pills">
+    <span class="pill pl-p">Legislation</span>
+    <span class="pill pl-k">Kenya</span>
+    <span class="pill pl-g">Geopolitics</span>
+    <span class="pill pl-k">Continental</span>
+  </div>
+  <p>Kenya's Senate continued deliberations on the Artificial Intelligence Bill 2026 — sponsored by Senator Karen Nyamu following her own experience with AI-generated deepfake imagery — proposing an Office of the AI Commissioner, criminal liability of up to KES 5 million for non-consensual deepfake generation and distribution, and mandatory plain-language explanations of all automated decisions. Simultaneously, Kenya formalised the first EU–Africa country-level Digital Dialogue, with a €430 million commitment covering fibre expansion, AI partnerships, and Digital Public Infrastructure. EU officials specifically cited Kenya's progressive regulatory environment as the primary factor in designating it as Africa's first formal EU digital cooperation partner.</p>
+  <div class="insight-box">
+    <div class="ib-label">The dual-track governance model</div>
+    <p>Kenya is executing what no other African nation has yet achieved: advancing domestic AI legislation AND international digital diplomacy simultaneously, with each reinforcing the other. The EU €430M commitment is partly conditional on Kenya's regulatory credibility — meaning the AI Bill's progress is directly capital-linked. This is the governance-investment virtuous cycle that Rwanda demonstrated in fintech and that Nigeria and South Africa are still trying to achieve. The lesson for the continent: regulation is not a barrier to investment. For countries with sufficient institutional credibility, it is the invitation.</p>
+  </div>
+  <div class="meta-row">
+    <span class="source">iAfrica.com · TechAfrica News · Ecofin Agency · Capital FM Kenya — 18–20 March 2026</span>
+  </div>
+</div>
+
+<!-- DEV 5: $2B SURVEILLANCE -->
+<div class="story">
+  <div class="rank-badge critical">RANK #5 — SECURITY: LANDMARK REPORT</div>
+  <h3>IDS Report: $2.1 Billion in Chinese AI Surveillance Across 11 African Countries — Without a Single Adequate Rights Framework</h3>
+  <div class="pills">
+    <span class="pill pl-s">Security</span>
+    <span class="pill pl-g">Geopolitics</span>
+    <span class="pill pl-k">Continental</span>
+    <span class="pill pl-p">Governance</span>
+  </div>
+  <p>The Institute of Development Studies and African Digital Rights Network published a landmark report on 12 March 2026 — gaining peak continental traction on 17–20 March — documenting that governments in Algeria, Egypt, Kenya, Mauritius, Mozambique, Nigeria, Rwanda, Senegal, Uganda, Zambia, and Zimbabwe have collectively spent more than $2.1 billion on Chinese-built AI-enabled smart city surveillance systems, including facial recognition, CCTV networks, vehicle tracking, and command-and-control centres. The actual total is likely significantly higher because contracts are routinely classified and the study covers only 11 of Africa's 55 countries.</p>
+  <p>The report found no compelling evidence that mass surveillance has reduced terrorism or serious crime in any of the 11 countries studied — including Zambia and Senegal, which face no significant terrorist threat — while documenting cases of journalists, political opponents, and human rights defenders being tracked, arrested, and detained using surveillance data. Chinese state banks financed these systems under loan agreements explicitly conditional on purchasing Chinese technology. Rest of World published its own investigation on 20 March, adding fresh editorial reach to findings that had circulated in policy circles since the IDS publication.</p>
+  <div class="insight-box">
+    <div class="ib-label">The governance gap made physical</div>
+    <p>Nigeria is Africa's single largest buyer of this infrastructure — $470M of the $2.1B total. The same country is within weeks of enacting the continent's most comprehensive AI governance legislation. The IDS report makes concrete what AI policy discussions often leave abstract: $2.1 billion of deployed AI systems are currently operating across 11 African countries in a complete rights vacuum. The legislation being debated in Abuja, Nairobi, and Pretoria is not proactive governance — it is retrospective rationalisation of systems that are already surveilling, tracking, and detaining citizens.</p>
+  </div>
+  <div class="meta-row">
+    <span class="source">Institute of Development Studies · Rest of World · African Digital Rights Network · CIPESA — 12–20 March 2026</span>
+  </div>
+</div>
+
+<!-- DEV 6: WORLD BANK WDR -->
+<div class="story">
+  <div class="rank-badge geo">RANK #6 — INSTITUTIONAL</div>
+  <h3>World Bank WDR 2026 Regional Consultation Concludes in Pretoria — Africa's AI Experience Written Into the Year's Most Influential Development Report</h3>
+  <div class="pills">
+    <span class="pill pl-k">Continental</span>
+    <span class="pill pl-p">Policy</span>
+    <span class="pill pl-g">Geopolitics</span>
+    <span class="pill pl-k">South Africa</span>
+  </div>
+  <p>The World Bank Group's regional consultation for its World Development Report 2026, themed "Artificial Intelligence for Development," concluded on 21 March at the University of Pretoria — a four-day event hosted by the World Bank's Institute for Economic Development and co-sponsored by UP's African Institute of Data Science and Artificial Intelligence, examining how AI is reshaping jobs and productivity, its deployment in public service delivery across health, education, and social security, and the regulatory preparedness of developing countries to govern AI systems.</p>
+  <div class="insight-box">
+    <div class="ib-label">Why this matters beyond the conference</div>
+    <p>WDR reports are among the most influential annual publications in global development economics — shaping donor priorities and government strategies across the 100+ developing countries that follow World Bank guidance. The evidence gathered at the Pretoria consultation will directly inform the WDR 2026 policy recommendations. African policymakers who attended this consultation have shaped the multilateral AI policy blueprint for the Global South. Those who were not present will implement recommendations written by those who were.</p>
+  </div>
+  <div class="meta-row">
+    <span class="source">iAfrica.com · Tshwane University of Technology · World Bank — 18–21 March 2026</span>
+  </div>
+</div>
+
+<!-- DEV 7: GOOGLE ACCELERATOR CLOSES -->
+<div class="story">
+  <div class="rank-badge">RANK #7 — ECOSYSTEM SIGNAL</div>
+  <h3>Google for Startups Accelerator Africa Class 10 Closes — The First "AI-First" Cohort Marks a Decade of Programme Evolution</h3>
+  <div class="pills">
+    <span class="pill pl-e">Ecosystem</span>
+    <span class="pill pl-k">Continental</span>
+    <span class="pill pl-e">Investment</span>
+    <span class="pill pl-t">Machine Learning</span>
+  </div>
+  <p>Google's 10th cohort of the Google for Startups Accelerator Africa closed applications on 18 March 2026 — the first cohort explicitly framed as "AI-First," targeting applied AI in healthcare, climate resilience, and societal impact across a 12-week hybrid programme (April–June 2026). The programme's ten-year track record: 180+ alumni companies across 17 African countries, collectively raising over $350 million and creating more than 3,700 direct jobs. The Class 10 "AI-First" framing signals Google's explicit conviction that Africa's next generation of tech champions will be characterised by AI embedded at the product core, not added as a feature.</p>
+  <div class="insight-box">
+    <div class="ib-label">Why the closing matters as much as the opening</div>
+    <p>Application closing deadlines for elite programmes are leading indicators of the next 18 months of Africa's AI startup quality. The founders who applied to Class 10 — motivated by the explicit "AI-First" framing — represent the cohort that will be raising Series A rounds in 2027–2028. The programme's healthcare and climate focus also signals where Google sees Africa's most differentiated AI opportunity: not competing with global consumer AI platforms, but solving problems that no other market has the scale or urgency to address.</p>
+  </div>
+  <div class="meta-row">
+    <span class="source">Google Blog Africa · Techpoint Africa · TechInAfrica — 05 Feb → 18 March 2026</span>
+  </div>
+</div>
+
+<!-- DEV 8: SA AI POLICY GAZETTE DELAYED -->
+<div class="story">
+  <div class="rank-badge watch">RANK #8 — POLICY WATCH</div>
+  <h3>South Africa AI Policy Gazette Continues to Slip — March Window Narrowing as Cabinet Process Extends Into Final Week of Quarter</h3>
+  <div class="pills">
+    <span class="pill pl-p">Policy</span>
+    <span class="pill pl-p">Regulation</span>
+    <span class="pill pl-k">South Africa</span>
+    <span class="pill pl-k">Continental</span>
+  </div>
+  <p>South Africa's Draft National AI Policy — confirmed by the Department of Communications and Digital Technologies as having cleared all inter-departmental hurdles — remained un-gazetted through the week ending 24 March. Fasken and Baker McKenzie legal bulletins, widely circulated during the window, continued to confirm that gazetting for a 60-day public consultation period was expected in March 2026, with April now emerging as the backup window. The Africa FinTech Forum SA (24 March, Johannesburg) opened with regulators and major banks in the same room explicitly aligning on AI-driven financial transformation — while the regulatory document governing that transformation remained unpublished.</p>
+  <div class="insight-box">
+    <div class="ib-label">The institutional misalignment signal</div>
+    <p>The week's most ironic juxtaposition: SARB, FSCA, Absa, Capitec, and FirstRand gathered in Johannesburg to align on responsible AI deployment standards — while the regulatory framework governing those standards had not yet been gazetted. South Africa's financial sector is operating ahead of its rule book. For every organisation deploying AI in SA financial services: the 60-day comment window, whenever it opens, is your one opportunity to shape the rules before they bind you. Begin internal AI audits now.</p>
+  </div>
+  <div class="meta-row">
+    <span class="source">Fasken · Baker McKenzie · DCDT · Africa FinTech Forum — March 2026</span>
+  </div>
+</div>
+
+<!-- DEV 9: MARK NASILA / SOVEREIGN AI -->
+<div class="story">
+  <div class="rank-badge">RANK #9 — OP-ED: SOVEREIGN AI</div>
+  <h3>Mark Nasila: Africa Holds 3% of Global AI Talent — "Sovereign Artificial Intelligence" Frames the Continent's Structural AI Challenge</h3>
+  <div class="pills">
+    <span class="pill pl-k">Continental</span>
+    <span class="pill pl-p">Research</span>
+    <span class="pill pl-k">South Africa</span>
+    <span class="pill pl-e">Ecosystem</span>
+  </div>
+  <p>In a CNBC Africa interview aired on 17 March 2026, FNB Chief AI Officer and author of the newly published "Sovereign Artificial Intelligence" Mark Nasila argued that Africa's structural disadvantage is not a lack of talent potential but a failure to control the AI value chain — citing that the continent currently accounts for only 3% of global AI talent, 1% of global AI infrastructure investment, and has just 14 countries with active national AI policies. He drew a direct parallel with China's demographic-scale strategy, arguing Africa's young population is the same raw ingredient — but only if enterprise deployment and grassroots citizen enablement are pursued simultaneously.</p>
+  <div class="meta-row">
+    <span class="source">CNBC Africa — 17 March 2026</span>
+  </div>
+</div>
+
+<!-- DEV 10: BAFAI + TALENT PIPELINE -->
+<div class="story">
+  <div class="rank-badge">RANK #10 — TALENT SOVEREIGNTY</div>
+  <h3>BAFAI Expands AI Curriculum to Include Agentic AI and Ethics — Nigeria's AI Education Institution Builds the Human Infrastructure That Cassava's Factory Needs</h3>
+  <div class="pills">
+    <span class="pill pl-e">Ecosystem</span>
+    <span class="pill pl-k">Nigeria</span>
+    <span class="pill pl-e">Skilling</span>
+    <span class="pill pl-k">Pan-Africa</span>
+  </div>
+  <p>Bloom Academy for Artificial Intelligence (BAFAI) — Nigeria's foremost dedicated AI education institution — announced on 18 March the addition of Agentic AI, AI Ethics, AI Research, Workflow Automation, and Data Annotation as formal certificate programmes, welcoming more than ten new facilitators globally, and launching a Career Fair connecting graduates directly with employer partners. Founder Dr. Lola Olukuewu — MIT-trained, first Nigerian female certified as a Chief AI Officer — framed the expansion explicitly: "Africa and the global south do not need to wait for the world to bring AI to us." The same day Cassava's AI Factory went live, BAFAI announced the human infrastructure designed to run it.</p>
+  <div class="insight-box">
+    <div class="ib-label">The compute-talent integration problem</div>
+    <p>Cassava's AI Factory provides GPU compute. BAFAI provides trained practitioners. Microsoft Elevate provides AI literacy. These are the three layers of Africa's sovereign AI stack — and they are advancing independently, without a structured integration mechanism. The continent needs what Mark Nasila calls simultaneous enterprise deployment and grassroots enablement. Until infrastructure providers and education institutions build explicit pipeline partnerships, Africa risks building compute capacity without the talent to fill it and talent without the compute to develop on.</p>
+  </div>
+  <div class="meta-row">
+    <span class="source">ThisDayLive · Vanguard · Techeconomy.ng — 18–19 March 2026</span>
+  </div>
+</div>
+
+<!-- DEV 11: RWANDA FINTECH CENTRE -->
+<div class="story">
+  <div class="rank-badge">RANK #11 — ECOSYSTEM: EAST AFRICA</div>
+  <h3>Rwanda Officially Launches FinTech Centre — Kigali Cements Its Role as East Africa's AI-Finance Capital After IFF 2026</h3>
+  <div class="pills">
+    <span class="pill pl-e">Ecosystem</span>
+    <span class="pill pl-k">Rwanda</span>
+    <span class="pill pl-k">Continental</span>
+    <span class="pill pl-e">Fintech</span>
+  </div>
+  <p>Rwanda's Ministry of ICT and Innovation officially launched the Rwanda FinTech Centre on 18 March 2026, creating a permanent one-stop coordination hub for the country's 100+ fintech companies — co-designed by the Ministry of ICT, KIFC, the Rwanda ICT Chamber, the Rwanda FinTech Association, and Luxembourg Cooperation. The Centre builds on Rwanda's third-place African ranking and 67th global ranking in the 2025 Global Financial Centres Index, consolidating the momentum from IFF 2026 (10–12 March, Kigali), which piloted licence passporting between Rwanda and Ghana. National Bank Governor Soraya Munyana Hakuziyaremye warned simultaneously that AI adoption in financial services requires "absolutely essential" cross-border regulatory alignment.</p>
+  <div class="meta-row">
+    <span class="source">KT Press · Africa.com · The Fintech Times — 10–18 March 2026</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 3: MARKET SIGNALS
+══════════════════════════════════ -->
+<div class="sec" id="market">
+  <div class="sec-num">§ 03</div>
+  <h2>Market &amp; Business Signals</h2>
+</div>
+
+<div class="data-grid">
+  <div class="data-card">
+    <span class="dc-val teal">160 MW</span>
+    <span class="dc-lbl">New SA data centre capacity announced this week (Equinix + Cassava combined)</span>
+  </div>
+  <div class="data-card">
+    <span class="dc-val gold">€430M</span>
+    <span class="dc-lbl">EU–Kenya Digital Dialogue commitment</span>
+  </div>
+  <div class="data-card">
+    <span class="dc-val rust">$2.1B</span>
+    <span class="dc-lbl">Chinese AI surveillance deployed without rights frameworks</span>
+  </div>
+  <div class="data-card">
+    <span class="dc-val">3%</span>
+    <span class="dc-lbl">Africa's share of global AI talent (Nasila / FNB)</span>
+  </div>
+</div>
+
+<div class="story" style="margin-top:14px;">
+  <div class="rank-badge">INFRASTRUCTURE INVESTMENT SURGE</div>
+  <h3>South Africa's AI Infrastructure Build Has Become Self-Reinforcing — Four Operators Expanding Simultaneously Create a Critical Mass Effect</h3>
+  <div class="pills">
+    <span class="pill pl-i">Infrastructure</span>
+    <span class="pill pl-e">Market Data</span>
+    <span class="pill pl-k">South Africa</span>
+  </div>
+  <p>Within a five-day window (16–21 March 2026), four distinct AI infrastructure commitments landed simultaneously in South Africa: MTN announcing AI data centre partners (16 March), Cassava deploying its AI Factory (18 March), Business Tech Africa reporting 172 MW of new capacity under construction across SA operators, and Equinix's land acquisition in Johannesburg and Cape Town (subsequently confirmed 31 March). South Africa holds approximately 75% of Africa's total data-centre capacity — and this week's announcements will expand that footprint dramatically. The self-reinforcing dynamic: each new facility makes South Africa a more credible AI hub for hyperscalers, which attracts more enterprise demand, which justifies more facilities.</p>
+  <div class="insight-box">
+    <div class="ib-label">The concentration risk this creates</div>
+    <p>South Africa's AI infrastructure dominance is a continental bottleneck as much as a national advantage. Every African government, startup, and researcher whose AI workloads run through Johannesburg is subject to South African regulatory jurisdiction, South African currency risk, and South African physical infrastructure failure modes. The continent's sovereign AI story requires distributed compute nodes — not just a bigger Cape Town campus.</p>
+  </div>
+  <div class="meta-row">
+    <span class="source">TechCentral · Cassava Technologies · Business Tech Africa — 16–21 March 2026</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 4: RESEARCH & INSTITUTIONAL
+══════════════════════════════════ -->
+<div class="sec" id="research">
+  <div class="sec-num">§ 04</div>
+  <h2>Research &amp; Institutional Findings</h2>
+</div>
+
+<div class="story">
+  <div class="rank-badge">RESEARCH: DATA PROTECTION</div>
+  <h3>TechCabal / Future of Privacy Forum: Data Protection Has Become Africa's "Backdoor" AI Regulation — And the Structural Gaps Are Visible</h3>
+  <div class="pills">
+    <span class="pill pl-p">Research</span>
+    <span class="pill pl-k">Continental</span>
+    <span class="pill pl-p">Policy</span>
+  </div>
+  <p>A TechCabal investigation published on 19 March 2026, drawing on a new Future of Privacy Forum report covering seven African countries, documented that African policymakers are using existing data protection laws as a "backdoor" AI governance mechanism — a pragmatic approach that FPF's Mercy King'Ori describes as "Africa's second wave of digital policy reform" but which increasingly shows structural limits as AI moves into agentic decision-making, credit scoring, facial recognition, and automated surveillance. A July 2025 audit cited in the analysis found a 23% lower loan-approval rate for women-led SMEs in Nigeria despite a 17% better repayment record — a live example of AI-embedded bias that data protection frameworks were not designed to surface or remedy.</p>
+  <div class="insight-box">
+    <div class="ib-label">The accountability architecture problem</div>
+    <p>Data protection law addresses how data is collected, stored, and processed. AI governance law addresses how automated systems make decisions, explain themselves, and can be challenged. These are different layers of accountability — and African citizens affected by biased credit scoring, wrongful surveillance, or unexplained benefit denials are currently protected by neither. The Nigeria AI Bill, Kenya's AI Bill 2026, and South Africa's Draft AI Policy are not redundant with existing data protection frameworks. They are addressing the gap that those frameworks were never designed to fill.</p>
+  </div>
+  <div class="meta-row">
+    <span class="source">TechCabal · Future of Privacy Forum — 19 March 2026</span>
+  </div>
+</div>
+
+<div class="story">
+  <div class="rank-badge">RESEARCH: CREATIVE ECONOMY AI</div>
+  <h3>iAfrica Analysis: Africa's Creative Economy Is on the Cusp of Its Biggest AI Revolution — Mobile-First Production Bypasses Studio Barriers</h3>
+  <div class="pills">
+    <span class="pill pl-t">Tech</span>
+    <span class="pill pl-k">Continental</span>
+    <span class="pill pl-e">Ecosystem</span>
+  </div>
+  <p>An iAfrica.com analysis published on 19 March argues that the convergence of AI-powered production tools — editing, visual effects, subtitling, translation, and concept development — with Africa's near-universal mobile penetration is compressing the barrier between storytelling idea and finished creative product from expensive studio-based production to a smartphone-and-AI pipeline accessible to any creator with a device. The global creative economy exceeds $2 trillion, with Africa's share growing faster than any other region. The significance for Africa's AI ecosystem: mobile-first creative AI may be the highest-reach consumer AI application on the continent, reaching demographics that enterprise and fintech AI never will.</p>
+  <div class="meta-row">
+    <span class="source">iAfrica.com — 19 March 2026</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 5: STRATEGIC INSIGHTS
+══════════════════════════════════ -->
+<div class="sec" id="strategic">
+  <div class="sec-num">§ 05</div>
+  <h2>Strategic Insights (Agent 3+4 Output)</h2>
+</div>
+
+<div class="insight-card">
+  <div class="ic-head">Insight 01 — The Week Africa's AI Sovereignty Became Physical</div>
+  <div class="ic-title">Cassava's AI Factory launch is the moment Africa's AI sovereignty narrative stopped being rhetorical and started being operational.</div>
+  <div class="ic-body">The continent has produced national AI strategies, sovereignty manifestos, and vision documents for years. What changed on 18 March 2026 is that GPU compute — the physical substrate of AI capability — became available within African borders for the first time at commercial scale. The previous barrier: any African enterprise or government body wanting to train or fine-tune AI models had to route workloads through European or US data centres, with attendant data sovereignty risk, FX cost, and latency. Cassava removes that barrier. The next barrier — talent capacity to use the compute — is what BAFAI, Google's accelerator, and Microsoft Elevate are now racing to fill. Infrastructure sovereignty without talent sovereignty is a data centre. Infrastructure sovereignty WITH talent sovereignty is a competitive AI economy.</div>
+</div>
+
+<div class="insight-card" style="background:#082050; margin-top:10px;">
+  <div class="ic-head">Insight 02 — Kenya's Governance Model Is Africa's Most Replicable Template</div>
+  <div class="ic-title">Simultaneous domestic legislation + international digital diplomacy creates a governance-investment virtuous cycle that Nigeria and South Africa have not yet achieved.</div>
+  <div class="ic-body">Kenya's AI Bill advances in the Senate. The EU announces €430M in digital investment citing Kenya's regulatory credibility as the primary factor. These are not separate events — they are the same event. Every time Kenya advances its domestic AI Bill, it increases the credibility that attracts European and multilateral capital. Every time it secures international digital commitments, it strengthens the political case for advancing domestic legislation. Nigeria has the AI Bill; it lacks the international diplomacy track to create the same self-reinforcing dynamic. South Africa has the diplomatic credibility but lacks enacted law. Only Kenya is running both tracks simultaneously — which is why it is outpacing larger economies in AI governance momentum.</div>
+</div>
+
+<div class="insight-card" style="background:#4a1a08; margin-top:10px;">
+  <div class="ic-head">Insight 03 — The Surveillance-Governance Race Has Already Been Lost in 11 Countries</div>
+  <div class="ic-title">The $2.1 billion IDS finding reframes Africa's AI governance conversation: the question is no longer "when will law arrive before deployment?" — it is "how do we govern what has already been deployed?"</div>
+  <div class="ic-body">Every African AI governance discussion assumes that legislation arrives before or alongside AI deployment, creating a regulatory framework for new systems. The IDS report destroys this assumption with data: $2.1 billion of AI surveillance systems are already operational in 11 African countries, fully deployed, without a single rights framework. This is not a near-future risk. It is a present governance emergency. The laws being written in Abuja, Nairobi, and Pretoria must therefore be designed not only for future AI deployments but for the retrospective governance of existing systems — a much harder regulatory design problem that none of the current bills adequately addresses.</div>
+</div>
+
+<div class="insight-card" style="background:#1a0a30; margin-top:10px;">
+  <div class="ic-head">Insight 04 — The Talent-Compute Integration Gap Is Africa's Most Urgent AI Problem</div>
+  <div class="ic-title">Africa is building its AI infrastructure layers in isolation. Until compute providers and talent institutions build explicit pipeline partnerships, sovereign infrastructure will not produce sovereign capability.</div>
+  <div class="ic-body">Week of 17–24 March: Cassava AI Factory (compute) deploys; BAFAI curriculum expands (talent); Microsoft Elevate skilling continues (literacy); Google Accelerator closes applications (startup pipeline). All four layers of Africa's sovereign AI stack advanced simultaneously — and none of them announced a formal integration. The continent needs Cassava to publish a developer partnership programme that gives BAFAI graduates prioritised access to CAIMEx; Microsoft Elevate graduates who need GPU resources to test AI applications; Google Accelerator cohort members who need sovereign compute for production deployments. Infrastructure sovereignty and talent sovereignty are not the same project. Until they are treated as one, Africa will continue building capacity in silos.</div>
+</div>
+
+<div class="insight-card" style="background:#3a0a1a; margin-top:10px;">
+  <div class="ic-head">Insight 05 — GITEX Africa Will Be Africa's AI Report Card for Q1 2026</div>
+  <div class="ic-title">Every governance delay, every infrastructure commitment, and every ecosystem development from this week will be priced by $350B in institutional capital when GITEX Africa opens in Marrakech on 7 April.</div>
+  <div class="ic-body">GITEX Africa Morocco 2026 (7–9 April, Marrakech) arrives 13 days after this window closes, 10 days after Nigeria's AI Bill deadline expires, and one day after the ECA Conference of Ministers concludes in Tangier. The event will be the first major capital gathering at which Africa's new regulatory landscape — its laws, its delays, its surveillance gaps, and its infrastructure commitments — is simultaneously visible to 400 venture capitalists and corporate funds managing $350B in assets. Founders and policymakers who understand the governance narrative investors will encounter in Marrakech will control the conversation. Those who are unprepared will be priced by it.</div>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 6: OPPORTUNITIES
+══════════════════════════════════ -->
+<div class="sec" id="opportunities">
+  <div class="sec-num">§ 06</div>
+  <h2>Opportunities (Agent 3 Output)</h2>
+</div>
+
+<div style="background:#fff; border:1px solid var(--border); padding:16px 18px;">
+  <div class="opp-row">
+    <div class="opp-num">01</div>
+    <div class="opp-body">
+      <div class="opp-title">Build on Cassava's CAIMEx — The First-Mover Window on Africa's Sovereign Compute Platform Is Open Now</div>
+      <div class="opp-desc">Cassava's CAIMEx multi-model exchange platform is the only GPU-as-a-Service infrastructure available within African borders for regulated workloads. The first African AI startups to build production applications that natively integrate with CAIMEx — rather than routing through AWS or Azure — gain a sovereign compliance advantage, lower latency, and the ability to serve government clients that currently cannot use foreign cloud. The window before global platforms replicate this offering locally is approximately 12–18 months.</div>
+    </div>
+  </div>
+  <div class="opp-row">
+    <div class="opp-num">02</div>
+    <div class="opp-body">
+      <div class="opp-title">Retrospective AI Governance Audit Services — The $2.1B Surveillance Gap Creates a New Compliance Category</div>
+      <div class="opp-desc">The IDS report documents $2.1B of deployed AI surveillance systems in 11 countries with no rights frameworks. When Nigeria's AI Bill, South Africa's gazette, and Kenya's AI Act are enacted, every government that deployed these systems will face a governance gap audit requirement. The legal, technical, and policy advisory market for retrospective AI system auditing — assessing deployed facial recognition, ANPR, and command-and-control infrastructure against new governance standards — does not yet exist in Africa. Build it now.</div>
+    </div>
+  </div>
+  <div class="opp-row">
+    <div class="opp-num">03</div>
+    <div class="opp-body">
+      <div class="opp-title">EU–Africa AI Partnership Matching — Kenya's Digital Dialogue Template Is Replicable</div>
+      <div class="opp-desc">Kenya secured €430M in EU digital investment by having the right regulatory posture at the right moment. Ghana, Rwanda, Senegal, and Côte d'Ivoire all have improving digital governance environments but lack the diplomatic infrastructure to access EU investment vehicles. Advisory firms and trade diplomacy specialists who can replicate Kenya's Digital Dialogue template for other African markets — mapping AI regulatory progress to EU partnership criteria — serve a market that has no current incumbents.</div>
+    </div>
+  </div>
+  <div class="opp-row">
+    <div class="opp-num">04</div>
+    <div class="opp-body">
+      <div class="opp-title">Compute-Talent Integration Platform — The Missing Layer in Africa's Sovereign AI Stack</div>
+      <div class="opp-desc">Cassava provides compute. BAFAI provides graduates. Google Accelerator provides vetted founders. No platform currently connects these three layers. A marketplace that matches African AI practitioners with CAIMEx compute credits, BAFAI graduates with AI startup apprenticeships, and Google Accelerator alumni with sovereign compute access for production workloads would close the integration gap that every African AI stakeholder recognises but none has yet addressed commercially.</div>
+    </div>
+  </div>
+  <div class="opp-row">
+    <div class="opp-num">05</div>
+    <div class="opp-body">
+      <div class="opp-title">Mobile-First AI Creative Tools for African Languages and Cultural Contexts</div>
+      <div class="opp-desc">iAfrica's analysis of the creative economy AI opportunity points to a market where mobile penetration is near-universal but production tools remain calibrated for Western languages, aesthetics, and storytelling conventions. The first AI creative tools built for Yoruba, Hausa, Amharic, Swahili, and Zulu — for African music production, film editing, and digital storytelling — serve a global market of African-diaspora creators and a domestic market that no current AI creative platform has addressed.</div>
+    </div>
+  </div>
+  <div class="opp-row">
+    <div class="opp-num">06</div>
+    <div class="opp-body">
+      <div class="opp-title">SA AI Policy Comment Infrastructure — The 60-Day Window Shapes a Decade</div>
+      <div class="opp-desc">When South Africa's Draft AI Policy is gazetted in April, a 60-day public comment period opens that will determine how sector-specific algorithmic explainability and oversight requirements are written for financial services, healthcare, and the public sector. Law firms, AI governance consultancies, and civil society organisations that submit substantive, technically credible comments have disproportionate influence on implementation rules that will bind every AI deployer in Africa's second-largest economy from 2027/2028. The window to prepare those comments opens within weeks.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 7: RISKS
+══════════════════════════════════ -->
+<div class="sec" id="risks">
+  <div class="sec-num">§ 07</div>
+  <h2>Risks &amp; Threats (Agent 4 Output)</h2>
+</div>
+
+<div class="risk-item">
+  <span class="risk-icon">⚡</span>
+  <div><strong>Sovereign compute without sovereign governance creates a new risk layer.</strong> Cassava's AI Factory places GPU compute within African borders — but the governance frameworks that would determine how that compute is used, by whom, and with what accountability are not yet enacted in any of Cassava's five target markets. Sovereign infrastructure without enacted law may simply shift AI-enabled harm from foreign data centres to domestic ones — closer to citizens but no more accountable.</div>
+</div>
+<div class="risk-item">
+  <span class="risk-icon">⚡</span>
+  <div><strong>Kenya's AI Bill 2026 — the "open-source compliance gap" could paralyse local developers.</strong> The bill requires AI deployers to provide training-data audit trails and algorithmic transparency documentation — but most Kenyan developers adapt global open-source models (GPT, Llama, Mistral) trained by companies outside Kenyan jurisdiction, whose training data they cannot document. If enacted as written, the compliance burden falls most heavily on exactly the local startup ecosystem the bill is ostensibly designed to protect, while global platforms adapt their enterprise offerings to meet requirements their in-house legal teams can afford.</div>
+</div>
+<div class="risk-item">
+  <span class="risk-icon">⚠</span>
+  <div><strong>The surveillance governance window is narrowing before law arrives.</strong> The IDS report documents systems already deployed in 11 countries. With Nigeria's AI Bill delayed, South Africa's gazette outstanding, and Kenya's bill still in Senate committee, the gap between surveillance deployment and rights governance will widen further before it narrows. Every additional month of delay adds more installed surveillance capacity that will require retrospective governance — a progressively harder regulatory design challenge as the systems become more embedded in state infrastructure.</div>
+</div>
+<div class="risk-item">
+  <span class="risk-icon">⚠</span>
+  <div><strong>South Africa's compute concentration is creating continental dependency.</strong> With Equinix, Teraco, Cassava, and Vantage all expanding South African capacity simultaneously, the country is on track to hold an even larger share of African data-centre capacity. Every African AI company that routes its production workloads through Johannesburg is exposed to South African regulatory jurisdiction, currency risk, and physical infrastructure failure. The continent's sovereign AI story requires distributed compute architecture — not just a bigger Johannesburg.</div>
+</div>
+<div class="risk-item">
+  <span class="risk-icon">→</span>
+  <div><strong>GITEX Africa governance pricing event — unprepared founders will be priced negatively.</strong> With Nigeria's AI Bill deadline expiring on 31 March and South Africa's gazette outstanding, GITEX Africa (7 April) opens as the first capital event at which $350B in institutional assets prices Africa's regulatory vacuum. African founders who cannot credibly articulate their compliance posture — including the regulatory gaps they are navigating — will face a risk premium in investor conversations that well-prepared founders with clear governance narratives can convert into differentiation.</div>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 8: EVENTS CALENDAR
+══════════════════════════════════ -->
+<div class="sec" id="events">
+  <div class="sec-num">§ 08</div>
+  <h2>Events Calendar — Q1/Q2 2026</h2>
+</div>
+
+<table class="events-table">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Event</th>
+      <th>Location</th>
+      <th>Significance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="ev-date">17–21 Mar</td>
+      <td><strong>NVIDIA GTC 2026</strong><br><span class="ev-tag done">Concluded</span></td>
+      <td>San Jose, CA (+ Virtual)</td>
+      <td>Vera Rubin GPU unveiled. Direct pipeline to Cassava AI Factory and Africa's sovereign compute trajectory.</td>
+    </tr>
+    <tr>
+      <td class="ev-date">18 Mar</td>
+      <td><strong>Cassava AI Factory Launch</strong><br><span class="ev-tag done">Live</span></td>
+      <td>South Africa</td>
+      <td>Africa's first NVIDIA-powered sovereign AI compute platform. Expansion to Nigeria, Kenya, Egypt, Morocco confirmed.</td>
+    </tr>
+    <tr>
+      <td class="ev-date">18–21 Mar</td>
+      <td><strong>World Bank WDR 2026 Consultation</strong><br><span class="ev-tag done">Concluded</span></td>
+      <td>Pretoria, SA</td>
+      <td>African evidence gathered for the world's most influential development economics report. Policy recommendations set for 2026/2027 global implementation.</td>
+    </tr>
+    <tr>
+      <td class="ev-date">24 Mar</td>
+      <td><strong>Africa FinTech Forum SA 2026</strong><br><span class="ev-tag done">Concluded</span></td>
+      <td>Johannesburg, SA</td>
+      <td>SARB, FSCA, and Africa's major banks aligned on AI-driven financial transformation. Regulator alignment ahead of SA gazette.</td>
+    </tr>
+    <tr>
+      <td class="ev-date">26 Mar</td>
+      <td><strong>Ghana GRA AI Contract — High Court Hearing</strong><br><span class="ev-tag live">Next Week</span></td>
+      <td>Accra, Ghana</td>
+      <td>West Africa's first legal challenge to an AI procurement decision. Could set continental precedent for AI contract transparency.</td>
+    </tr>
+    <tr>
+      <td class="ev-date">27 Mar</td>
+      <td><strong>UNESCO Priority Africa AI Conference</strong><br><span class="ev-tag live">Next Week</span></td>
+      <td>Paris, France</td>
+      <td>African ministers, KAIST, and South-South partners. Allocates multilateral AI implementation support for 2026.</td>
+    </tr>
+    <tr>
+      <td class="ev-date">28 Mar–3 Apr</td>
+      <td><strong>ECA Conference of Ministers — ERA 2026 Launch</strong><br><span class="ev-tag live">Next Week</span></td>
+      <td>Tangier, Morocco</td>
+      <td>ERA 2026 formally launched. Binding ministerial AI investment commitments produced. Direct input to AfDB programme design.</td>
+    </tr>
+    <tr>
+      <td class="ev-date">31 Mar</td>
+      <td><strong>Nigeria AI Bill — End-of-March Deadline</strong><br><span class="ev-tag live">Deadline</span></td>
+      <td>Abuja, Nigeria</td>
+      <td>National Assembly's self-imposed target. Passage = Africa's first comprehensive AI law. Missed = Q2 reset. Monitor nitda.gov.ng.</td>
+    </tr>
+    <tr>
+      <td class="ev-date">7–9 Apr</td>
+      <td><strong>GITEX Africa Morocco 2026</strong></td>
+      <td>Marrakech, Morocco</td>
+      <td>First capital event post-deadline. 1,450+ exhibitors, $350B in assets. Africa's regulatory landscape priced by global investors.</td>
+    </tr>
+    <tr>
+      <td class="ev-date">22 Apr</td>
+      <td><strong>ITWeb AI Summit 2026</strong></td>
+      <td>Johannesburg, SA</td>
+      <td>First public post-gazette briefing on SA National AI Policy. DCDT's Mlindi Mashologu keynotes.</td>
+    </tr>
+    <tr>
+      <td class="ev-date">Jun 2026</td>
+      <td><strong>MTN Capital Markets Day</strong></td>
+      <td>Johannesburg, SA</td>
+      <td>MTN names AI data centre co-investment partners for SA and Nigeria. Most important African compute infrastructure announcement of Q2.</td>
+    </tr>
+    <tr>
+      <td class="ev-date">Aug 2026</td>
+      <td><strong>Deep Learning Indaba 2026</strong></td>
+      <td>Nigeria (TBC)</td>
+      <td>First time in Nigeria. "Sovereign Intelligence" theme. African dataset call open. Africa's premier ML research conference.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ══════════════════════════════════
+     SECTION 9: SKILLS FILE UPDATE
+══════════════════════════════════ -->
+<div class="sec" id="skills">
+  <div class="sec-num">§ 09</div>
+  <h2>Skills File Update (Agent 6 Output)</h2>
+</div>
+
+<div class="agent-log">
+  <div class="al-head">§ Skills File v1.0 → v1.1 — Changes Made This Week</div>
+  <div class="al-step"><span class="ok">NEW RULE:</span> <span class="st">Global GPU/hardware announcements (NVIDIA GTC, AMD, etc.) must always be immediately cross-referenced with African NVIDIA partners (Cassava) and the continent's compute pipeline. Hardware is not a global story — it is the upstream input to Africa's sovereign compute narrative. Always connect.</span></div>
+  <div class="al-step"><span class="ok">NEW RULE:</span> <span class="st">Accelerator/programme application deadlines are not calendar items — they are leading indicators of startup pipeline quality 18 months forward. Always analyse: who applied, what was the selection theme, what does it signal about the next funding cohort?</span></div>
+  <div class="al-step"><span class="ok">NEW FRAMEWORK:</span> <span class="st">Add "Sovereign AI Stack Layers" as a standing analytical lens: (1) Compute sovereignty — local GPU/data centres; (2) Language sovereignty — African NLP models and datasets; (3) Governance sovereignty — enacted legislation, not strategy documents; (4) Talent sovereignty — practitioners who can build on the infrastructure; (5) Capital sovereignty — African-owned investment vehicles. Track integration between layers, not just individual layer progress.</span></div>
+  <div class="al-step"><span class="ok">NEW SIGNAL TYPE:</span> <span class="st">Retrospective governance gaps (systems deployed before law) are now a standing analytical category, not an episodic event. The $2.1B IDS surveillance finding is the template. Always ask: what AI systems are already deployed in this country that no existing law covers?</span></div>
+  <div class="al-step"><span class="ok">UPDATED RULE:</span> <span class="st">Dual-track governance (domestic legislation + international diplomacy) should always be flagged when a single country advances both simultaneously. Kenya is the 2026 model. Identify which other African nations could replicate this approach and what conditions are required.</span></div>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 10: MEMORY LOG
+══════════════════════════════════ -->
+<div class="sec" id="memory">
+  <div class="sec-num">§ 10</div>
+  <h2>Memory Log (Agent 7 Output)</h2>
+</div>
+
+<div class="agent-log">
+  <div class="al-head">§ Long-Term Strategic Memory — Patterns Extracted AIW-026-03</div>
+  <div class="al-step"><span class="ag">[PATTERN: CONFIRMED]</span> <span class="st">The week of Cassava AI Factory launch (18 March) is the inflection point where Africa's AI sovereignty narrative moved from rhetorical to operational. All future coverage should reference this week as the baseline for sovereign compute availability on the continent.</span></div>
+  <div class="al-step"><span class="ag">[PATTERN: EMERGING]</span> <span class="st">Kenya is running the continent's most sophisticated AI governance strategy in 2026: simultaneous domestic legislation + international digital diplomacy + active civil society engagement. Track whether this dual-track model produces faster legislation passage than Nigeria's single-track legislative approach.</span></div>
+  <div class="al-step"><span class="ag">[PATTERN: STRUCTURAL]</span> <span class="st">Africa's sovereign AI stack has five layers advancing independently with no integration mechanism: compute (Cassava), language (NITDA/NKENNEAi/Masakhane), governance (legislation), talent (BAFAI/Microsoft/Google), and capital (AfDB/DFI). The integration problem — connecting these layers into a coherent ecosystem — is the continent's most important unsolved AI challenge in 2026.</span></div>
+  <div class="al-step"><span class="ag">[DATA POINT: STORED]</span> <span class="st">$2.1B Chinese AI surveillance, 11 countries, zero rights frameworks. This is the baseline for Africa's retrospective governance challenge. Reference this data point in every subsequent edition covering AI surveillance, electoral AI threats, or rights frameworks in Africa.</span></div>
+  <div class="al-step"><span class="ag">[TREND: ACCELERATION]</span> <span class="st">Infrastructure capital velocity in South Africa is now self-reinforcing. Cassava (18 March) + Equinix (31 March) + MTN (June 2026) + Teraco (172 MW under construction) = four simultaneous expansions from different operators. This pattern — multiple operators expanding simultaneously in the same geography — historically precedes hyperscale market maturation. South Africa's AI infrastructure decade has structurally arrived.</span></div>
+  <div class="al-step"><span class="ag">[MISTAKE: CORRECTED]</span> <span class="st">Previous editions treated talent development (BAFAI, Microsoft Elevate, Google Accelerator) as background ecosystem news. Reclassify: talent pipeline health is a leading indicator for the quality of Africa's AI startup cohort in 18–24 months. Cover all significant talent milestones as tier-1 signals, not tier-3 calendar items.</span></div>
+</div>
+
+<!-- EDITOR'S NOTE -->
+<div class="ed-note">
+  <div class="en-label">§ Editor's Note — AIW-026-03</div>
+  <p>The week of 17–24 March 2026 will be remembered as the week Africa's AI sovereignty story became physical. Before Cassava's AI Factory launched on 18 March, "sovereign AI" was a strategy document, a conference theme, a political aspiration. After 18 March, it is a GPU rack — operational, within African borders, accessible to African developers, governed by African data residency requirements. The significance of this moment cannot be overstated: every national AI strategy on the continent identified compute access as the critical bottleneck. That bottleneck now has an operational solution.</p>
+  <p style="margin-top: 12px;">The IDS surveillance report lands as a necessary corrective. Physical sovereignty over compute is meaningless if the systems running on that compute are tracking journalists and detaining rights defenders without legal oversight. Africa needs infrastructure sovereignty AND governance sovereignty — and the $2.1 billion already deployed tells us the sequencing question has already been answered by history: deployment came first. The only question now is whether governance arrives before the next $2.1 billion is spent.</p>
+  <p style="margin-top: 12px; font-family: 'DM Mono', monospace; font-size: 10px; color: rgba(122,212,190,0.4); letter-spacing: 0.06em;">— The Daily African Lens Intelligence Desk · Edition #AIW-026-03 · Backdated: 24 March 2026 · Generated via 7-Agent Agentic Workflow v1.1</p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="logo">The Daily African Lens</div>
+  <p>AI · Machine Learning · Data Science · Across 54 Nations</p>
+  <p>Published every morning at 6:00 AM SAST</p>
+  <p>AI Weekly Intelligence — Edition #AIW-026-03 · Week ending 24 March 2026</p>
+  <p>Produced via AI Weekly Intelligence Agentic Workflow v1.1 (7 agents)</p>
+  <p style="margin-top:10px;">Subscribe: <a href="https://simphiwemlotshwa.substack.com/">simphiwemlotshwa.substack.com</a></p>
+  <p style="margin-top:8px; font-size:10px; color:#b0a898;">© 2026 The Daily African Lens. All summaries are paraphrased editorial originals — no verbatim reproduction of source material. All source material drawn from DAL daily editions DAL-026-075 through DAL-026-080.</p>
+</div>
+
+</div><!-- /wrapper -->
 </body>
 </html>
