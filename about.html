@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — The Weekly African Lens</title>
+  <meta name="description" content="About The Weekly African Lens — AI intelligence covering 54 African nations. Who we are, why we exist, and how we work." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── Design tokens ── */
+    :root {
+      --ink:    #0e0e0e;
+      --cream:  #faf7f2;
+      --gold:   #c8922a;
+      --rust:   #b84c2a;
+      --teal:   #1a6b5e;
+      --mid:    #5a5a52;
+      --rule:   #d8d0c4;
+      --hover:  #f0ebe2;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Masthead ── */
+    header {
+      border-bottom: 2px solid var(--ink);
+      padding: 0 2rem;
+    }
+
+    .masthead-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 0 0.9rem;
+      gap: 1rem;
+    }
+
+    .masthead-wordmark {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .masthead-wordmark span {
+      color: var(--gold);
+    }
+
+    nav {
+      display: flex;
+      gap: 1.6rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.15s;
+    }
+
+    nav a:hover { opacity: 1; }
+
+    nav a.nav-subscribe {
+      opacity: 1;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    nav a.nav-active {
+      opacity: 1;
+      border-bottom: 1.5px solid var(--ink);
+      padding-bottom: 1px;
+    }
+
+    /* ── Page hero ── */
+    .page-eyebrow {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2.8rem 2rem 0;
+    }
+
+    .eyebrow-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--mid);
+    }
+
+    .page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin: 0.5rem 0 0.8rem;
+    }
+
+    .page-subtitle {
+      font-size: 1rem;
+      color: var(--mid);
+      font-weight: 400;
+      max-width: 640px;
+    }
+
+    /* ── Document meta bar ── */
+    .doc-meta {
+      max-width: 860px;
+      margin: 1.6rem auto 0;
+      padding: 0.7rem 2rem;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 2.5rem;
+    }
+
+    .doc-meta span {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--mid);
+      letter-spacing: 0.04em;
+    }
+
+    .doc-meta strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* ── Main content ── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem 5rem;
+    }
+
+    /* ── Sections ── */
+    .section {
+      margin-top: 3.5rem;
+      padding-top: 1.5rem;
+      border-top: 1.5px solid var(--ink);
+    }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--mid);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: 1.1rem;
+    }
+
+    .section p {
+      font-size: 0.96rem;
+      line-height: 1.75;
+      color: var(--ink);
+      max-width: 680px;
+      margin-bottom: 1rem;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ── Stat grid ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+      margin: 1.8rem 0;
+    }
+
+    .stat-cell {
+      background: var(--cream);
+      padding: 1.4rem 1.2rem 1.2rem;
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--mid);
+      margin-top: 0.35rem;
+    }
+
+    /* ── Pull quote ── */
+    .pull-quote {
+      border-left: 3px solid var(--gold);
+      margin: 2rem 0;
+      padding: 0.8rem 1.4rem;
+      background: var(--hover);
+    }
+
+    .pull-quote p {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.08rem;
+      line-height: 1.6;
+      color: var(--ink);
+      max-width: 100%;
+      margin: 0;
+    }
+
+    /* ── Coverage pillars ── */
+    .pillar-list {
+      list-style: none;
+      margin: 1.4rem 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .pillar-list li {
+      background: var(--hover);
+      border-left: 3px solid var(--teal);
+      padding: 0.9rem 1rem 0.8rem;
+    }
+
+    .pillar-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 500;
+      color: var(--teal);
+    }
+
+    .pillar-desc {
+      font-size: 0.88rem;
+      color: var(--mid);
+      margin-top: 0.3rem;
+      line-height: 1.55;
+    }
+
+    /* ── Team / People ── */
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.4rem;
+      margin: 1.6rem 0;
+    }
+
+    .person-card {
+      border: 1px solid var(--rule);
+      padding: 1.3rem 1.2rem 1.1rem;
+      background: var(--cream);
+    }
+
+    .person-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .person-role {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .person-bio {
+      font-size: 0.87rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    /* ── Timeline / History ── */
+    .timeline {
+      margin: 1.6rem 0;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 5.5rem;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--rule);
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 5.5rem 1fr;
+      gap: 0 1.4rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .timeline-item:last-child { border-bottom: none; }
+
+    .timeline-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      color: var(--mid);
+      text-align: right;
+      padding-top: 0.15rem;
+      padding-right: 1.2rem;
+      position: relative;
+    }
+
+    .timeline-date::after {
+      content: '';
+      position: absolute;
+      right: -5px;
+      top: 0.45rem;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 2px solid var(--cream);
+      outline: 1px solid var(--gold);
+    }
+
+    .timeline-content strong {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-content span {
+      font-size: 0.86rem;
+      color: var(--mid);
+    }
+
+    /* ── Nation coverage bar ── */
+    .coverage-note {
+      background: var(--hover);
+      border: 1px solid var(--rule);
+      padding: 1.1rem 1.3rem;
+      margin: 1.6rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .coverage-icon {
+      font-size: 1.4rem;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .coverage-text {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    .coverage-text strong { color: var(--ink); }
+
+    /* ── CTA block ── */
+    .cta-block {
+      margin: 2.4rem 0 0;
+      padding: 2rem 1.6rem;
+      border: 2px solid var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+
+    .cta-text strong {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .cta-text span {
+      font-size: 0.88rem;
+      color: var(--mid);
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--ink);
+      color: var(--cream);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.7rem 1.5rem;
+      text-decoration: none;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    .cta-btn:hover { background: var(--gold); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 2px solid var(--ink);
+      padding: 1.8rem 2rem;
+      max-width: 100%;
+    }
+
+    .footer-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+
+    .footer-brand {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+
+    .footer-brand strong {
+      font-weight: 500;
+      color: var(--ink);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.4rem;
+      align-items: center;
+    }
+
+    .footer-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .footer-links a:hover { color: var(--ink); }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .masthead-wordmark { font-size: 1rem; }
+      nav { gap: 0.9rem; }
+      .timeline::before { left: 4.2rem; }
+      .timeline-item { grid-template-columns: 4.2rem 1fr; }
+      .cta-block { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Masthead ── -->
+  <header>
+    <div class="masthead-top">
+      <a href="https://1906reblabs.github.io/weekly-african-lens/index.html" class="masthead-wordmark">
+        The Weekly<span> African Lens.</span>
+      </a>
+      <nav>
+        <a href="https://1906reblabs.github.io/weekly-african-lens/index.html">Archive</a>
+        <a href="https://1906reblabs.github.io/weekly-african-lens/weekly/index.html">AI Weekly</a>
+        <a href="https://1906reblabs.github.io/weekly-african-lens/editions/index.html">Daily Editions</a>
+        <a href="https://1906reblabs.github.io/weekly-african-lens/about.html" class="nav-active">About</a>
+        <a href="https://simphiwemlotshwa.substack.com/" class="nav-subscribe">Subscribe</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── Hero ── -->
+  <div class="page-eyebrow">
+    <p class="eyebrow-label">Who We Are &amp; Why We Exist</p>
+    <h1 class="page-title">About</h1>
+    <p class="page-subtitle">
+      An independent AI intelligence publication. 54 nations. Daily signal. Weekly synthesis.
+    </p>
+  </div>
+
+  <div class="doc-meta">
+    <span>Document reference: <strong>DAL-ABOUT-001</strong></span>
+    <span>Published: <strong>19 April 2026</strong></span>
+    <span>Publisher: <strong>1906 Reblabs</strong></span>
+    <span>Headquarters: <strong>Johannesburg, South Africa</strong></span>
+  </div>
+
+  <!-- ── Main ── -->
+  <main>
+
+    <!-- § 01 — Mission -->
+    <section class="section" id="mission">
+      <p class="section-label">§ 01 — Mission</p>
+      <h2 class="section-heading">Why this publication exists</h2>
+
+      <p>
+        The Weekly African Lens is an independent AI intelligence publication tracking artificial
+        intelligence, machine learning, and data science developments across all 54 African Union
+        member states. We publish a daily intelligence brief every morning at 6:00&nbsp;AM SAST and
+        a synthesised weekly report every Tuesday.
+      </p>
+
+      <p>
+        Africa's AI story is one of the most consequential technology narratives of this decade —
+        and one of the most inconsistently covered. International media concentrates its attention on
+        South Africa, Nigeria, Kenya, and Egypt. The remaining 50 AU member states are largely
+        invisible in global AI discourse, even as their governments draft legislation, their
+        institutions deploy infrastructure, and their researchers publish research.
+      </p>
+
+      <div class="pull-quote">
+        <p>
+          Our mandate is to reduce information asymmetry — to surface signal from across the full
+          continent, not just the four capitals the international press returns to by default.
+        </p>
+      </div>
+
+      <p>
+        We exist for policymakers who need to understand what neighbouring jurisdictions are doing.
+        For investors assessing where capital is moving. For researchers who need a current map of
+        who is doing what. For practitioners navigating a fast-moving landscape. And for a general
+        readership that wants to understand Africa's AI moment with rigour and context.
+      </p>
+
+      <div class="stat-grid">
+        <div class="stat-cell">
+          <div class="stat-number">54</div>
+          <div class="stat-label">Nations in scope</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-number">21+</div>
+          <div class="stat-label">Daily editions</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-number">6</div>
+          <div class="stat-label">AI Weekly reports</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-number">Q1–Q2</div>
+          <div class="stat-label">2026 coverage</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 02 — What we cover -->
+    <section class="section" id="coverage">
+      <p class="section-label">§ 02 — Coverage</p>
+      <h2 class="section-heading">What we track across the continent</h2>
+
+      <p>
+        Every edition is constrained to AI, machine learning, data science, and the policy and
+        infrastructure conditions that enable or constrain them. We do not cover general tech news.
+        We do not cover fintech for its own sake. We do not aggregate press releases. Our editorial
+        filter is strict: a story must be materially relevant to AI adoption, governance, or
+        capability on the continent to be included.
+      </p>
+
+      <p>
+        Within that scope, our recurring thematic pillars — identified through sustained coverage
+        since March 2026 — are:
+      </p>
+
+      <ul class="pillar-list">
+        <li>
+          <div class="pillar-title">AI Policy &amp; Regulation</div>
+          <div class="pillar-desc">
+            Legislation, gazette entries, consultation documents, and regulatory frameworks across AU
+            member states. Tracked from draft to enforcement.
+          </div>
+        </li>
+        <li>
+          <div class="pillar-title">Language AI &amp; African NLP</div>
+          <div class="pillar-desc">
+            Large language model development for African languages, NLP research, datasets, and
+            deployment. Google, Masakhane, Intron, and beyond.
+          </div>
+        </li>
+        <li>
+          <div class="pillar-title">Sovereign AI Infrastructure</div>
+          <div class="pillar-desc">
+            Data centres, compute capacity, cloud agreements, and the hardware layer underpinning
+            AI deployment across the continent.
+          </div>
+        </li>
+        <li>
+          <div class="pillar-title">AI Fraud &amp; Biometric Security</div>
+          <div class="pillar-desc">
+            Deepfake fraud, identity verification, biometric systems, and the security implications
+            of AI at scale in African financial and civic systems.
+          </div>
+        </li>
+        <li>
+          <div class="pillar-title">Geopolitical AI Competition</div>
+          <div class="pillar-desc">
+            US, China, EU, and Korea competition for Africa's AI market — infrastructure deals,
+            model deployments, and strategic partnerships.
+          </div>
+        </li>
+        <li>
+          <div class="pillar-title">Deep Tech Ecosystem</div>
+          <div class="pillar-desc">
+            Accelerators, research hubs, talent pipelines, academic institutions, and the
+            organisations building Africa's long-term AI capacity.
+          </div>
+        </li>
+      </ul>
+
+      <div class="coverage-note">
+        <div class="coverage-icon">🌍</div>
+        <div class="coverage-text">
+          <strong>Geographic distribution is an active editorial priority.</strong>
+          We track nation coverage across editions and explicitly work against the tendency to
+          over-index on South Africa, Nigeria, Kenya, and Egypt. Where a story from a less-covered
+          AU member state meets the significance threshold, it is included — regardless of whether
+          international wire services have picked it up.
+        </div>
+      </div>
+    </section>
+
+    <!-- § 03 — The publication -->
+    <section class="section" id="publication">
+      <p class="section-label">§ 03 — The Publication</p>
+      <h2 class="section-heading">Two series, one archive</h2>
+
+      <p>
+        The Weekly African Lens publishes two distinct formats, each serving a different reader
+        need and operating on a different cadence.
+      </p>
+
+      <p>
+        <strong>The Daily African Lens (DAL)</strong> — published every morning at 6:00&nbsp;AM SAST —
+        delivers up to 20 ranked intelligence items covering the prior 24-hour SAST window. Items
+        are ranked by continental significance, not recency. Each item carries a source attribution
+        and is paraphrased editorial original — no verbatim reproduction of source material.
+        Reference format: <code>DAL-[YY]-[NNN]</code>.
+      </p>
+
+      <p>
+        <strong>AI Weekly Intelligence (AIW)</strong> — published every Tuesday at 6:00&nbsp;AM SAST —
+        synthesises the prior week's signal into a structured eight-section report: Executive
+        Summary, Key Developments, Market Signals, Strategic Insights, Opportunities, Risks,
+        Events Watch, and Intelligence Close. Reference format: <code>AIW-[YY]-[NN]</code>.
+      </p>
+
+      <p>
+        Both series are archived permanently at this site and distributed via the Substack
+        newsletter. The archive is the canonical record. Every edition is dated, referenced, and
+        retained without modification — except in the case of corrections, which are noted visibly
+        in the archived edition.
+      </p>
+    </section>
+
+    <!-- § 04 — Origins -->
+    <section class="section" id="origins">
+      <p class="section-label">§ 04 — Origins &amp; Timeline</p>
+      <h2 class="section-heading">How we got here</h2>
+
+      <p>
+        The Weekly African Lens launched in Q1 2026 as a response to a clear gap: no publication
+        was providing daily, structured, continent-wide AI intelligence with editorial rigour. The
+        publication is built on an agentic workflow — seven specialised AI agents operating under
+        editorial parameters set and maintained by the human editorial desk.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Mar 2026</div>
+          <div class="timeline-content">
+            <strong>Launch — Edition DAL-026-067</strong>
+            <span>First edition published. Coverage: Google 13 African Languages · Smile ID AI Fraud · US-China AI competition for Africa.</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Mar 2026</div>
+          <div class="timeline-content">
+            <strong>AI Weekly Intelligence launches</strong>
+            <span>First AIW report published. Synthesis layer added to the daily intelligence operation.</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Mar 2026</div>
+          <div class="timeline-content">
+            <strong>Sovereignty Week — AIW-026-03</strong>
+            <span>Cassava AI Factory in South Africa · NVIDIA GTC · Korea-Africa AI cooperation. Sovereign infrastructure emerges as a primary theme.</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Apr 2026</div>
+          <div class="timeline-content">
+            <strong>South Africa's AI Policy gazetted</strong>
+            <span>The continent's most significant AI governance milestone of Q1 2026. Covered in DAL-026-080 and as the lead of AIW-026-06.</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Apr 2026</div>
+          <div class="timeline-content">
+            <strong>GITEX Africa closes — $5B pipeline</strong>
+            <span>Morocco signs the $1.28B Nexus AI Factory MoU. Mauritius FAIR Guidelines published. Covered in AIW-026-06.</span>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Ongoing</div>
+          <div class="timeline-content">
+            <strong>Agentic Workflow v1.0 — continuous improvement</strong>
+            <span>The seven-agent pipeline operates under continuous refinement. Workflow versions are tracked and noted where changes affect editorial output.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- § 05 — Publisher -->
+    <section class="section" id="publisher">
+      <p class="section-label">§ 05 — Publisher &amp; Editorial</p>
+      <h2 class="section-heading">1906 Reblabs</h2>
+
+      <p>
+        The Weekly African Lens is published by <strong>1906 Reblabs</strong>, a South African
+        media and technology project focused on AI-native publishing. The editorial desk is based
+        in Johannesburg, South Africa.
+      </p>
+
+      <div class="people-grid">
+        <div class="person-card">
+          <div class="person-name">Simphiwe Mlotshwa</div>
+          <div class="person-role">Editor &amp; Publisher · 1906 Reblabs</div>
+          <div class="person-bio">
+            Leads editorial direction, source tier management, and the agentic workflow design for
+            The Weekly African Lens. Based in Johannesburg.
+          </div>
+        </div>
+        <div class="person-card">
+          <div class="person-name">Agentic Workflow v1.0</div>
+          <div class="person-role">Seven-agent production pipeline</div>
+          <div class="person-bio">
+            Source Monitor · Significance Ranker · Cross-Reference Verifier · Editorial Writer ·
+            Second-Order Analyst · Risk &amp; Opportunity Mapper · Publisher &amp; Formatter.
+            Operating under human editorial parameters.
+          </div>
+        </div>
+      </div>
+
+      <p>
+        The publication does not accept payment for coverage, positive framing, or editorial
+        positioning. There are no advertising relationships. We have no sponsorship from any company,
+        government, or institution we cover. For the full statement of editorial independence, see
+        our <a href="https://1906reblabs.github.io/weekly-african-lens/editorial.html"
+        style="color: var(--teal); text-decoration: none; border-bottom: 1px solid var(--teal);">
+        Editorial Standards</a>.
+      </p>
+    </section>
+
+    <!-- § 06 — Contact & Subscribe -->
+    <section class="section" id="contact">
+      <p class="section-label">§ 06 — Contact &amp; Subscribe</p>
+      <h2 class="section-heading">Stay in the intelligence loop</h2>
+
+      <p>
+        The newsletter is the primary distribution channel for both series. It is free to subscribe.
+        Every edition is delivered to your inbox at 6:00&nbsp;AM SAST on publication day. The full
+        archive — every DAL and AIW edition — is available permanently at this site.
+      </p>
+
+      <p>
+        For corrections, tips, methodology questions, or partnership enquiries, contact the editorial
+        desk via Substack. We respond to all substantive editorial enquiries.
+      </p>
+
+      <div class="cta-block">
+        <div class="cta-text">
+          <strong>The Weekly African Lens — Newsletter</strong>
+          <span>AI · Machine Learning · Data Science · Across 54 Nations · 6:00 AM SAST</span>
+        </div>
+        <a href="https://simphiwemlotshwa.substack.com/" class="cta-btn">
+          Subscribe →
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>The Weekly African Lens</strong>
+        AI · Machine Learning · Data Science · Across 54 Nations<br>
+        Published at 6:00 AM SAST · Archive hosted on GitHub Pages · © 2026 The Weekly African Lens
+      </div>
+      <div class="footer-links">
+        <a href="https://1906reblabs.github.io/weekly-african-lens/index.html">Archive</a>
+        <a href="https://1906reblabs.github.io/weekly-african-lens/weekly/index.html">AI Weekly</a>
+        <a href="https://1906reblabs.github.io/weekly-african-lens/editions/index.html">Daily Editions</a>
+        <a href="https://1906reblabs.github.io/weekly-african-lens/about.html">About</a>
+        <a href="https://1906reblabs.github.io/weekly-african-lens/privacy.html">Privacy Policy</a>
+        <a href="https://1906reblabs.github.io/weekly-african-lens/terms.html">Terms of Use</a>
+        <a href="https://1906reblabs.github.io/weekly-african-lens/editorial.html">Editorial Standards</a>
+        <a href="https://simphiwemlotshwa.substack.com/">Subscribe</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
